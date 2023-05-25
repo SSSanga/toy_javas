@@ -12,9 +12,12 @@ public class pollconfusion {
         for (int qnumber = 0; qnumber < quests.length; qnumber = qnumber + 1) {
             System.out.print(quests[qnumber]);
 
+            String[] answers = { " ", "전혀아니다", "아니다.", "그렇다", "매우그렇다." };
+            System.out.println (answers);
+
             Scanner myObj = new Scanner(System.in);
             int write = 0;
-            String[] answers = { " ", "전혀아니다", "아니다.", "그렇다", "매우그렇다." };
+
             write = myObj.nextInt();
 
             System.out.println("(" + write + ") ");

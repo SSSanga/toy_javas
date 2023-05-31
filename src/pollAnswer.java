@@ -3,6 +3,11 @@ import java.util.Scanner;
 public class pollAnswer {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);
+        String [] groupans = {"",""};
+
+        for (int reply = 0; reply < groupans){
+
+        }
         int write = 0;
         write = myObj.nextInt();
 

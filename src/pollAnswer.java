@@ -5,7 +5,7 @@ public class pollAnswer {
         Scanner myObj = new Scanner(System.in);
         String [] groupans = {"",""};
 
-        for (int reply = 0; reply < groupans){
+        for (int reply = 0; reply < groupans.length;reply= reply + 1){
 
         }
         int write = 0;

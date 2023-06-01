@@ -13,15 +13,15 @@ public class pollconfusion {
         String[] reply = { "", "", "", "" };
         for (int qnumber = 0; qnumber < quests.length; qnumber = qnumber + 1) {
             System.out.println(quests[qnumber]);
-            System.out.println("(1) 전혀 아니다." + "(2) 아니다." + "(3) 그렇다." + "(4) 매우 그렇다.")
+            System.out.println("(1) 전혀 아니다." + "(2) 아니다." + "(3) 그렇다." + "(4) 매우 그렇다.");
 
-                    = myObj.nextLine();
-            for (count = 0; count < total.length; count = count + 1) {
+                   int count = myObj.nextInt();
+            for (count = 0; count < reply.length; count = count + 1) {
                 System.out.println();
             }
         }
-
+        System.out.println();
     }
-    // System.out.println();
+    
     // return 0;
 }

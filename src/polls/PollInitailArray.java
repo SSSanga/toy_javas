@@ -1,6 +1,6 @@
 package polls;
 
-public class PolllnitailArray {
+public class PollInitailArray {
     
     int a = 0;
 
@@ -12,8 +12,9 @@ public class PolllnitailArray {
             { "4. 강의 진행 속도는 적절하였는가?" }
         };
 
-        for (a = 0; a < 4; a++) {
-            System.out.println(Que[a][0]);
+        for (a = 0; a < 4; a = a + 1) {
+            System.out.println(Que[a][0]); //Que에 대괄호 질문 = [a]인거고 그 질문에 대한 내용이 [0] 첫번째줄
+
         }
 
         return Que;

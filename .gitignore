@@ -1,4 +1,4 @@
-./ bin *
+bin /*
 bin/polls/PolllnitailArrays.class
 bin/polls/PollScanners.class
 bin/polls/PollStatistics.class

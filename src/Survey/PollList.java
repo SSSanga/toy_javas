@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 
 public class PollList {
+    public int PollInput (int answer){
+        Scanner myInput = new Scanner (System.in);
+        answer = myInput.nextInt();
+        return answer;
+    } //설문자 답을 던진다??
+    
     public PollList ()
     {    } // PollList 초기화
 
@@ -40,10 +46,6 @@ public class PollList {
             // TODO: handle exception
         }
     }
-public int PollInput (int answer){
-        Scanner myInput = new Scanner (System.in);
-        answer = myInput.nextInt();
-        return answer;
-    } //설문자 답을 던진다??
+
 
 }

@@ -1,24 +1,14 @@
 package Survey;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class PollList {
-    public int PollInput (int answer){
-        Scanner myInput = new Scanner (System.in);
-        answer = myInput.nextInt();
-        return answer;
-    } //설문자 답을 던진다??
-    
-    public PollList ()
-    {    } // PollList 초기화
 
-    
-    // 문항 초기화(), 입력()을 하기.
-    // 문항 초기화가 있다는 것은 질문 인스턴스화가 필요하다는건가??왜??
-    public static void main(String[] args) {
-        try {
+    public  PollList ()
+        {try {
             String url = "jdbc:mysql://localhost:3306/db_survey";
             String user = "root";
             String password = "!yojulab*";
@@ -28,12 +18,14 @@ public class PollList {
 
             Statement statement = connection.createStatement();
             
-
-            // String survey = "SELECT * FROM survey";
-            // ResultSet resultSet = statement.executeQuery(survey);
-            // // while (resultSet.next()) {
-            // // System.out.println(resultSet.getString("SURVEY"));
-            // // }
+            String survey = "SELECT * FROM survey";
+            ResultSet resultSet = statement.executeQuery(survey);
+            while (resultSet.next()) {
+            // System.out.println(resultSet.getString("SURVEY"));
+            ArrayList<String> arrayList = new ArrayList<String> ();
+            arrayList.add(resultSet.getString(survey));
+        } // while로 나오는 답을 array로 담을 수 있지 않나?
+            
             // String surveyID = "'SURVEY_02'";
             // survey = "SELECT SURVEY" + "FROM survey" + "WHERE SURVEY_ID = '" + surveyID + "'";
             // // if (resultSet.next()) 이렇게 해도 02에 대한 내용이 나오지 않음.
@@ -44,8 +36,32 @@ public class PollList {
             // }
         } catch (Exception e) {
             // TODO: handle exception
+        }}
+    
+    
+
+    public String[] PollInput(
+            String[] polls) {
+                String[] answer = { "", "" };
+                try {
+                    int count = 0;
+                    
+                    Scanner myObj = new Scanner(System.in);
+                    for (int second=0; second < polls.length; second=second+2){
+                        System.out.println(polls);
+                        // 답항 출력 본인이 해 보기
+            
+                        System.out.print("답하기 : ");
+                        answer[count] = myObj.nextLine();
+                        count = count + 1;
+                        System.out.println();
+                    }
+        } catch (Exception e) {
+            // TODO: handle exception
         }
-    }
-
-
+        return answer;
+    } //설문자 답을 던진다??
+    
+    // 문항 초기화(), 입력()을 하기.
+    // 문항 초기화가 있다는 것은 질문 인스턴스화가 필요하다는건가??왜??
 }
